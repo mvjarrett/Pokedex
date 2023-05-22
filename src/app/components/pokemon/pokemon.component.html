@@ -1,0 +1,11 @@
+<div class="entry" (click)="toggle()">
+  <img
+    mat-card-sm-image
+    src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+  />
+  <mat-card-content>
+    <p [@bodyExpansion]="state" class="expandable-content">
+      {{ longText }}
+    </p>
+  </mat-card-content>
+</div>

@@ -7,9 +7,7 @@ import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { ContainerComponent } from './components/container/container.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
-
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -19,11 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ContainerComponent,
     SidebarComponent,
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-  ],
+  imports: [BrowserModule, BrowserAnimationsModule, MatCardModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

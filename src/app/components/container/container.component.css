@@ -1,0 +1,44 @@
+body{
+ display: inline;
+ margin-right: 0px;
+ height: 100%;
+ width: 100%;
+}
+
+div{
+ height: 100%;
+ width: 100%;
+ overflow: hidden;
+}
+.boxleft{
+ border: 1px red solid;
+ width: 30%;
+ height: 50%;
+ float: left;
+}
+.boxright{
+ border: 1px blue solid;
+ margin-left: 31%;
+ height: 100%;
+ width: auto;
+ overflow-y: scroll;
+ overflow-x: hidden;
+ scrollbar-width: 1px;
+
+}
+::-webkit-scrollbar {
+ width: 4px;
+}
+::-webkit-scrollbar-track {
+ background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+ background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+ background: #555;
+}
