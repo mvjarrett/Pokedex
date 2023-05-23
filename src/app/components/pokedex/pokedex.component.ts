@@ -5,7 +5,7 @@ import { Pokemon } from 'src/app/models/pokemon';
 @Component({
   selector: 'app-pokedex',
   templateUrl: './pokedex.component.html',
-  styleUrls: ['./pokedex.component.css']
+  styleUrls: ['./pokedex.component.scss']
 })
 export class PokedexComponent implements OnInit {
 

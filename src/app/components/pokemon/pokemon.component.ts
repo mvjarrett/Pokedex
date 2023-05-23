@@ -13,7 +13,7 @@ import { Pokemon } from 'src/app/models/pokemon';
 @Component({
   selector: 'app-pokemon',
   templateUrl: './pokemon.component.html',
-  styleUrls: ['./pokemon.component.css'],
+  styleUrls: ['./pokemon.component.scss'],
   animations: [
     trigger('bodyExpansion', [
       state('collapsed, void', style({ height: '0px', visibility: 'hidden' })),
@@ -42,6 +42,7 @@ export class PokemonComponent implements OnInit {
     this.detail.getDetails(this.dexUrl).subscribe((data: any) => {
       if (data) {
         this.pokemon = data;
+        console.log(this.pokemon.types);
         this.detail.getFlavor(data.species.url).subscribe((species: any) => {
           if (species) {
             this.speciesData = species;

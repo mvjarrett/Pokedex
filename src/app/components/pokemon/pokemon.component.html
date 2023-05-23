@@ -1,14 +1,23 @@
-<mat-card *ngIf="pokemon != undefined" class="entry" (click)="toggle()">
-  <img mat-card-sm-image src="{{ pokemon.sprites.front_default }}" />
-  <mat-card-header>
-    <mat-card-title-group>
-      <mat-card-title>{{ dex }}</mat-card-title>
-      <mat-card-subtitle><p></p></mat-card-subtitle>
-    </mat-card-title-group>
-  </mat-card-header>
-  <mat-card-content *ngIf="speciesData != undefined">
-    <p [@bodyExpansion]="state" class="expandable-content">
-      {{ getFlavorLang() }}
-    </p>
-  </mat-card-content>
-</mat-card>
+<div *ngIf="pokemon != undefined">
+  <mat-card class="entry type-{{pokemon.types[0].type.name}}" (click)="toggle()">
+    
+    <img mat-card-sm-image src="{{ pokemon.sprites.front_default }}" />
+    <span *ngFor="let pokemonType of pokemon.types"
+    className="type type-{{pokemonType.type.name}} tag is-rounded">
+    {{pokemonType.type.name}}
+  </span>
+    <mat-card-header>
+      <mat-card-title-group class="titles">
+        <p>{{ dex }}</p>
+        <mat-card-subtitle>
+        </mat-card-subtitle>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content *ngIf="speciesData != undefined">
+      <p [@bodyExpansion]="state" class="expandable-content">
+        {{ getFlavorLang() }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+  
+</div>
