@@ -1,10 +1,16 @@
 .entry{
-
+ padding: 3px;
+ padding-left: 3%;
  background: grey;
- padding-bottom: 1px;
- border: 1px black solid;
+ margin-bottom: 2px;
+ border-radius: 20px 5px 5px 20px;
 }
 img{
- padding-top: 30px;
- width: 160px;
+ height: 100%;
 }
+.mat-card-header{
+ float: right;
+ padding-right: 5%;
+ text-align: center;
+}
+

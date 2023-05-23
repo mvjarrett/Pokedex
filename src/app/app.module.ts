@@ -8,6 +8,7 @@ import { ContainerComponent } from './components/container/container.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { MatCardModule } from '@angular/material/card';
     ContainerComponent,
     SidebarComponent,
   ],
-  imports: [BrowserModule, BrowserAnimationsModule, MatCardModule],
+  imports: [BrowserModule, BrowserAnimationsModule, MatCardModule, HttpClientModule,],
   providers: [],
   bootstrap: [AppComponent],
 })

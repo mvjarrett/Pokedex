@@ -1,4 +1,5 @@
-<app-pokemon></app-pokemon>
-<app-pokemon></app-pokemon>
-<app-pokemon></app-pokemon>
-<app-pokemon></app-pokemon>
+
+
+<div *ngFor="let pokemon of pkmndata">
+ <app-pokemon dex="{{pokemon.name}}" dexUrl="{{pokemon.url}}"></app-pokemon>
+</div>

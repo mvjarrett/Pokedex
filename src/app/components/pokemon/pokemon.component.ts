@@ -5,8 +5,10 @@ import {
   transition,
   animate,
 } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Input, OnInit } from '@angular/core';
+import { DetailCallService } from 'src/app/detail-call.service';
+import { SpeciesDetails } from 'src/app/models/speciesDetails';
+import { Pokemon } from 'src/app/models/pokemon';
 
 @Component({
   selector: 'app-pokemon',
@@ -24,16 +26,34 @@ import { Component, OnInit } from '@angular/core';
   ],
 })
 export class PokemonComponent implements OnInit {
-  longText = `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog
-  from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was
-  originally bred for hunting.`;
+  @Input() dex: any;
+  @Input() dexUrl: any;
 
   state = 'collapsed';
-
+  pokemon: Pokemon;
+  speciesData: SpeciesDetails;
+  speciesUrl = '';
   toggle(): void {
     this.state = this.state === 'collapsed' ? 'expanded' : 'collapsed';
   }
-  constructor() {}
+  constructor(private detail: DetailCallService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.detail.getDetails(this.dexUrl).subscribe((data: any) => {
+      if (data) {
+        this.pokemon = data;
+        this.detail.getFlavor(data.species.url).subscribe((species: any) => {
+          if (species) {
+            this.speciesData = species;
+          }
+        });
+      }
+    });
+  }
+  getFlavorLang() {
+    const result = this.speciesData.flavor_text_entries.find((flavorText) => {
+      return flavorText.language.name === 'en';
+    });
+    return result?.flavor_text.replace('\f', ' ');
+  }
 }
