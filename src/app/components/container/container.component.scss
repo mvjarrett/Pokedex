@@ -1,3 +1,5 @@
+$breakpoint-tablet: 768px;
+
 body{
  display: inline;
  margin-right: 0px;
@@ -9,18 +11,18 @@ div{
  height: 100%;
  width: 100%;
  overflow: hidden;
+ margin: 10px;
 }
 .boxleft{
- border: 1px red solid;
- width: 40%;
+ width: 20%;
  height: 50%;
  float: left;
+ overflow: hidden;
 }
 .boxright{
- border: 1px blue solid;
  margin-left: 31%;
  height: 100%;
- width: auto;
+ width: 40%;
  overflow-y: scroll;
  overflow-x: hidden;
  scrollbar-width: 1px;
@@ -42,3 +44,14 @@ div{
 ::-webkit-scrollbar-thumb:hover {
  background: #555;
 }
+
+@media (max-width: 768px) {
+ .boxleft{
+  width: 30%;
+ }
+ .boxright{
+  width: auto;
+
+ }
+}
+

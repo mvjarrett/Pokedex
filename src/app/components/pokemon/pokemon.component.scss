@@ -98,13 +98,13 @@ $color-water: #6890f0;
   padding: 3px;
   padding-left: 3%;
   margin-bottom: 2px;
-  border-bottom-left-radius: 4rem;
-  border-top-left-radius: 4rem;
+  border-radius: 1.5rem;
+  // border-top-left-radius: 2rem;
 }
 
 .mat-card-header {
   float: right;
-  padding-right: 70%;
+  text-transform: capitalize;
 }
 .tag {
   box-shadow: 1px 1px 1px black;
@@ -113,7 +113,18 @@ $color-water: #6890f0;
 }
 
 .titles {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: white;
   text-shadow: 1px 1px 1px black;
+  margin: 10px;
+  font-family: "Press Start 2P", cursive;
+}
+
+.expandable-content {
+  font-family: "Press Start 2P", cursive;
+  color: white;
+  font-size: 0.5rem;
+  text-shadow: 1px 1px 1px black;
+  padding-left: 1%;
+  padding-right: 1%;
 }

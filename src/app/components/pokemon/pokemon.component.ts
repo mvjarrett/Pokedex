@@ -42,7 +42,6 @@ export class PokemonComponent implements OnInit {
     this.detail.getDetails(this.dexUrl).subscribe((data: any) => {
       if (data) {
         this.pokemon = data;
-        console.log(this.pokemon.types);
         this.detail.getFlavor(data.species.url).subscribe((species: any) => {
           if (species) {
             this.speciesData = species;

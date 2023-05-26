@@ -1,7 +1,5 @@
-<h1>filter stuff</h1>
-
-<ol>
- <li>test1</li>
- <li>test2</li>
- <li>test3</li>
-</ol>
+<button mat-raised-button color="accent" [matMenuTriggerFor]="menu">Filters</button>
+<mat-menu #menu="matMenu">
+  <button (click)="genone()" mat-menu-item>Gen 1</button>
+  <button (click)="gentwo()" mat-menu-item>Gen 2</button>
+</mat-menu>

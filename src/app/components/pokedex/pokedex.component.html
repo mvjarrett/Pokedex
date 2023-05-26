@@ -1,5 +1,5 @@
 
-
+<div *ngIf="pkmndata != undefined">
 <div *ngFor="let pokemon of pkmndata">
  <app-pokemon dex="{{pokemon.name}}" dexUrl="{{pokemon.url}}"></app-pokemon>
 </div>
